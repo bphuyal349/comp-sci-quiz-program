@@ -1,0 +1,103 @@
+<html>
+  <head>
+     <title>Quiz Program</title>
+     <link rel = "stylesheet" herf = "quiz.css"></link>
+     <style>
+      input {
+       color: white;
+       background-color: #0099cc;
+       border: none;
+     }
+     h2 {
+       color: white;
+       text-align: center;
+       font-size: 100px;
+       margin: 0px;
+       border: 0px;
+     }
+     body{
+       background-color: black;
+     }
+     span {
+       color: white;
+     }
+     h2 {
+  width: %100;
+  height: 100px;
+  background-color: black;
+  animation-name: example;
+  animation-duration: 4s;
+
+}
+
+@keyframes example {
+  0%   {background-color: black;}
+  25%  {background-color: grey;}
+  50%  {background-color: black;}
+  100% {background-color: grey;}
+}
+     </style>
+     <script>
+     var score = 0;
+       var questionCount = 0;
+
+       function gradeQuiz()
+       {
+         var answer = document.getElementById('answer').value;
+
+         if(questionCount == 0)
+          {
+             if( answer == "undefined")
+                 {
+                    score = score + 1;
+                }
+             document.getElementById("question").innerHTML = "hmmm here is a tough one, what is 1+1?";
+
+           }
+
+         if(questionCount == 1)
+         {
+            if( answer == "1");
+               {
+                 score = score + 1;
+               }
+             document.getElementById("question").innerHTML = "what is one + 70679040980938450909098900909494941?";
+
+           }
+
+        if(questionCount == 2)
+          {
+            if( answer == "70679040980938450909098900909494942")
+              {
+                 score = score + 1;
+               }
+              end();
+          }
+
+         questionCount = questionCount + 1;
+       }
+
+       function end() {
+         document.getElementById('title').style.visibility = "hidden";
+         document.getElementById('question').style.visibility = "hidden";
+         document.getElementById('answer').style.visibility = "hidden";
+         document.getElementById('button').style.visibility = "hidden";
+         document.getElementById('end').style.visibility = "visible";
+         document.getElementById('end').innerHTML = " score  :" + score;
+
+       }
+
+     </script>
+  </head>
+
+  <body>
+    <h2 id = "title">Quiz</h2>
+    <hr>
+    <br>
+    <br>
+    <span id = "question">0-0?</span>
+    <input type = "text" id = "answer">
+    <input type = "button" value = "enter" onclick = "gradeQuiz()" id = "button">
+     <span id = "end" onload = "hide()"></span>
+  </body>
+</html>
